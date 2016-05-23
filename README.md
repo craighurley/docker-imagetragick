@@ -6,11 +6,11 @@ Run a containerised Flask app that relies on a version of ImageMagic that is vul
 
 1. Build a docker image:
 
-        $ docker build -t imagetragic .
+        $ docker build -t imagetragick .
 
 2. Create a docker container:
 
-        $ docker run -d --name imagetragic -p 127.0.0.1:8080:8080 imagetragic
+        $ docker run -d --name imagetragick -p 127.0.0.1:8080:8080 imagetragick
 
 3. Listen for the reverse shell:
 
