@@ -9,7 +9,7 @@ COPY        ./app /app
 WORKDIR     /app
 
 # Install pip modules
-RUN         pip install -r requirements.txt
+RUN         pip install --upgrade pip && pip install -r requirements.txt
 
 EXPOSE      8080
 
