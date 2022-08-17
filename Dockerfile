@@ -1,15 +1,15 @@
 FROM        centos:7
-MAINTAINER  Craig Hurley
+MAINTAINER  Thomas Fricke
 
 # Install packages
 RUN         yum install epel-release -y
-RUN         yum install python-pip ImageMagick-6.7.8.9-10.el7 -y
+RUN         yum install python3-pip ImageMagick-6.7.8.9-10.el7 -y
 
 COPY        ./app /app
 WORKDIR     /app
 
 # Install pip modules
-RUN         pip install --upgrade pip && pip install -r requirements.txt
+RUN         pip3 install -r requirements.txt
 
 EXPOSE      8080
 
