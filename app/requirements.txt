@@ -1,2 +1,2 @@
-flask
-wand
+Flask==1.1.4
+Wand
