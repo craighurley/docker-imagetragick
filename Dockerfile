@@ -14,6 +14,7 @@ WORKDIR     /app
 # Install pip modules
 RUN         pip3 install -r requirements.txt
 RUN         rm -r uploads && ln -s /tmp uploads  
+
 EXPOSE      8080
 
-CMD         python app.py
+CMD         python3 app.py
