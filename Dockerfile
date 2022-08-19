@@ -3,7 +3,9 @@ MAINTAINER  Craig Hurley
 
 # Install packages
 RUN         yum install epel-release -y
-RUN         yum install python3-pip ImageMagick-devel-6.7.8.9-10.el7 -y
+RUN         yum install python3-pip  -y
+ADD         ImageMagick-devel-6.7.8.9-10.el7.x86_64.rpm ImageMagick-6.7.8.9-10.el7.x86_64.rpm /tmp/
+RUN         yum localinstall /tmp/ImageMagick*.rpm -y 
 
 COPY        ./app /app
 WORKDIR     /app

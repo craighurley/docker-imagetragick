@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request, redirect, url_for
 from wand.image import Image
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = './uploads/'
 CONVERTED_FOLDER = './converted/'
