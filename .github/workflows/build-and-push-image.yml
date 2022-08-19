@@ -56,10 +56,3 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}            
 
-      - name: Dispatch deployment
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.PAT_FOR_WORKFLOW }}
-          repository: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          event-type: deployment
-
