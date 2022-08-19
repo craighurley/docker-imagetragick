@@ -60,6 +60,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.PAT_FOR_WORKFLOW }}
-          repository: impfen/kubernetes
+          repository: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           event-type: deployment
 
